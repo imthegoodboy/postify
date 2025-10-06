@@ -6,8 +6,9 @@ if (!LIGHTHOUSE_API_KEY) {
   throw new Error('LIGHTHOUSE_API_KEY is not defined in environment variables')
 }
 
-// Initialize Lighthouse with API key
-lighthouse.setAuthToken(LIGHTHOUSE_API_KEY)
+// The Lighthouse SDK exposes upload/getUploads functions that accept an auth token
+// directly in their options. We avoid calling a global `setAuthToken` to match
+// the SDK's TypeScript definitions.
 
 export interface UploadResponse {
   data: {
@@ -27,9 +28,8 @@ export interface UploadProgress {
  */
 export async function uploadToLighthouse(file: File): Promise<UploadResponse> {
   try {
-    const uploadResponse = await lighthouse.upload(file, {
-      authToken: LIGHTHOUSE_API_KEY,
-    })
+    // The SDK expects the API key as a string argument
+    const uploadResponse = await lighthouse.upload(file, LIGHTHOUSE_API_KEY!)
     
     return uploadResponse
   } catch (error) {
@@ -79,7 +79,7 @@ export async function uploadTextToLighthouse(content: string, filename: string =
  */
 export async function getStorageStats(): Promise<any> {
   try {
-    const stats = await lighthouse.getUploads(LIGHTHOUSE_API_KEY)
+  const stats = await lighthouse.getUploads(LIGHTHOUSE_API_KEY!)
     return stats
   } catch (error) {
     console.error('Lighthouse stats error:', error)
