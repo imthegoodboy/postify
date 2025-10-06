@@ -1,5 +1,7 @@
 "use client"
 
+export const dynamic = 'force-dynamic'
+
 import { useState, useRef, useEffect } from 'react'
 import { useSession } from 'next-auth/react'
 import { useRouter } from 'next/navigation'
@@ -11,19 +13,7 @@ import dynamic from 'next/dynamic'
 // Dynamically import ReactQuill with SSR disabled because it uses `document`/window
 const ReactQuill = dynamic(() => import('react-quill'), { ssr: false })
 
-// Load Quill CSS on the client only
-// (This avoids trying to import CSS during server-side rendering)
-useEffect(() => {
-  // Inject Quill stylesheet on the client to avoid server-side import errors
-  const id = 'quill-snow-css'
-  if (!document.getElementById(id)) {
-    const link = document.createElement('link')
-    link.id = id
-    link.rel = 'stylesheet'
-    link.href = 'https://cdn.jsdelivr.net/npm/react-quill@2.0.0/dist/quill.snow.css'
-    document.head.appendChild(link)
-  }
-}, [])
+// Note: CSS for ReactQuill will be injected inside the component using useEffect
 import toast from 'react-hot-toast'
 
 export default function NewPostPage() {
@@ -44,6 +34,18 @@ export default function NewPostPage() {
   const [videos, setVideos] = useState<string[]>([])
   const [isLoading, setIsLoading] = useState(false)
   const [isUploading, setIsUploading] = useState(false)
+
+  // Inject Quill stylesheet on the client to avoid server-side import errors
+  useEffect(() => {
+    const id = 'quill-snow-css'
+    if (!document.getElementById(id)) {
+      const link = document.createElement('link')
+      link.id = id
+      link.rel = 'stylesheet'
+      link.href = 'https://cdn.jsdelivr.net/npm/react-quill@2.0.0/dist/quill.snow.css'
+      document.head.appendChild(link)
+    }
+  }, [])
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
