@@ -23,7 +23,8 @@ export default function TestAuthPage() {
         setResult('Success! Sign in worked.')
       }
     } catch (error) {
-      setResult(`Exception: ${error.message}`)
+      const message = error instanceof Error ? error.message : String(error)
+      setResult(`Exception: ${message}`)
     }
   }
 
@@ -34,7 +35,8 @@ export default function TestAuthPage() {
       const data = await response.json()
       setResult(`DB Test: ${JSON.stringify(data)}`)
     } catch (error) {
-      setResult(`DB Error: ${error.message}`)
+      const message = error instanceof Error ? error.message : String(error)
+      setResult(`DB Error: ${message}`)
     }
   }
 
@@ -53,7 +55,8 @@ export default function TestAuthPage() {
       const data = await response.json()
       setResult(`Create User: ${JSON.stringify(data)}`)
     } catch (error) {
-      setResult(`Create Error: ${error.message}`)
+      const message = error instanceof Error ? error.message : String(error)
+      setResult(`Create Error: ${message}`)
     }
   }
 
