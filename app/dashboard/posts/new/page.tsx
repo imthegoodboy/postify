@@ -8,10 +8,10 @@ import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { ArrowLeft, Save, Eye, Upload, Image, Video } from 'lucide-react'
-import dynamic from 'next/dynamic'
+import dynamicImport from 'next/dynamic'
 
 // Dynamically import ReactQuill with SSR disabled because it uses `document`/window
-const ReactQuill = dynamic(() => import('react-quill'), { ssr: false })
+const ReactQuill = dynamicImport(() => import('react-quill'), { ssr: false })
 
 // Note: CSS for ReactQuill will be injected inside the component using useEffect
 import toast from 'react-hot-toast'
