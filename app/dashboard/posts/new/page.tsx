@@ -1,13 +1,29 @@
-'use client'
+"use client"
 
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { useSession } from 'next-auth/react'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { ArrowLeft, Save, Eye, Upload, Image, Video } from 'lucide-react'
-import ReactQuill from 'react-quill'
-import 'react-quill/dist/quill.snow.css'
+import dynamic from 'next/dynamic'
+
+// Dynamically import ReactQuill with SSR disabled because it uses `document`/window
+const ReactQuill = dynamic(() => import('react-quill'), { ssr: false })
+
+// Load Quill CSS on the client only
+// (This avoids trying to import CSS during server-side rendering)
+useEffect(() => {
+  // Inject Quill stylesheet on the client to avoid server-side import errors
+  const id = 'quill-snow-css'
+  if (!document.getElementById(id)) {
+    const link = document.createElement('link')
+    link.id = id
+    link.rel = 'stylesheet'
+    link.href = 'https://cdn.jsdelivr.net/npm/react-quill@2.0.0/dist/quill.snow.css'
+    document.head.appendChild(link)
+  }
+}, [])
 import toast from 'react-hot-toast'
 
 export default function NewPostPage() {
