@@ -23,7 +23,8 @@ export default function AboutPage() {
                 </span>
               </h1>
               <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-                We're on a mission to democratize content creation and help every voice be heard in the digital world.
+                We're building the future of decentralized content creation powered by Filecoin Onchain Cloud, 
+                ensuring every voice is heard without censorship or centralization.
               </p>
             </motion.div>
           </div>
@@ -42,18 +43,16 @@ export default function AboutPage() {
               <h2 className="text-4xl font-bold text-gray-900 mb-6">Our Story</h2>
               <div className="space-y-4 text-gray-600 leading-relaxed">
                 <p>
-                  Postify was born from a simple belief: everyone has a story worth sharing. 
-                  We noticed that creating a beautiful, professional blog was either too expensive, 
-                  too complicated, or too limiting for most people.
+                  Postify was born from a vision of a truly decentralized web where content creators 
+                  have full control over their data and can monetize their work without intermediaries.
                 </p>
                 <p>
-                  Founded in 2024 by a team of passionate developers and content creators, 
-                  we set out to solve this problem by building a platform that makes blogging 
-                  accessible to everyone, regardless of their technical skills or budget.
+                  Built on Filecoin Onchain Cloud, we leverage decentralized storage, payments, and 
+                  content delivery to create the first truly censorship-resistant blogging platform.
                 </p>
                 <p>
-                  Today, Postify powers thousands of blogs worldwide, helping creators, 
-                  entrepreneurs, and storytellers share their voices with the world.
+                  Today, Postify is pioneering the future of decentralized content creation, helping creators, 
+                  entrepreneurs, and storytellers share their voices without fear of censorship or data loss.
                 </p>
               </div>
             </motion.div>

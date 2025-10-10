@@ -7,13 +7,16 @@ import { Toaster } from 'react-hot-toast'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Postify - Create Your Custom Blog',
-  description: 'Create and customize your own blog page. Share your thoughts with the world through Postify.',
-  keywords: ['blog', 'custom blog', 'blogging platform', 'content creation'],
+  title: 'Postify - Decentralized Blog Platform on Filecoin',
+  description: 'Create and customize your own blog page powered by Filecoin Onchain Cloud. Decentralized storage, payments, and content delivery for the future of blogging.',
+  keywords: ['blog', 'decentralized blog', 'filecoin', 'web3', 'blockchain', 'content creation', 'decentralized storage'],
   authors: [{ name: 'Postify Team' }],
+  icons: {
+    icon: '/favicon.ico',
+  },
   openGraph: {
-    title: 'Postify - Create Your Custom Blog',
-    description: 'Create and customize your own blog page. Share your thoughts with the world through Postify.',
+    title: 'Postify - Decentralized Blog Platform on Filecoin',
+    description: 'Create and customize your own blog page powered by Filecoin Onchain Cloud. Decentralized storage, payments, and content delivery for the future of blogging.',
     type: 'website',
     locale: 'en_US',
   },

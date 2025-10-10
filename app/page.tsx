@@ -120,11 +120,13 @@ export default function HomePage() {
         )}
       </nav>
 
-      {/* Lighthouse Storage Notice */}
-      <div className="bg-gradient-to-r from-blue-50 to-purple-50 border-b border-blue-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 text-center text-sm text-gray-700">
-          We use <span className="font-semibold text-blue-700">Lighthouse</span> decentralized storage (IPFS) to keep your content
-          secure, resilient, and censorship‑resistant.
+      {/* Filecoin Onchain Cloud Banner */}
+      <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white text-center py-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-center space-x-2 text-sm font-medium">
+            <span className="text-2xl">🚀</span>
+            <span>Powered by <span className="font-bold">Filecoin Onchain Cloud</span> - Decentralized storage, payments, and content delivery for the future of web3</span>
+          </div>
         </div>
       </div>
 
@@ -138,19 +140,19 @@ export default function HomePage() {
               transition={{ duration: 0.8 }}
               className="mb-8"
             >
-              <span className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-blue-100 text-blue-800 mb-6">
+              <span className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-gradient-to-r from-blue-100 to-purple-100 text-blue-800 mb-6">
                 <Star className="h-4 w-4 mr-2" />
-                The Future of Blogging is Here
+                🚀 Built on Filecoin Onchain Cloud
               </span>
               <h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-6 leading-tight">
-                Create Your
+                Decentralized
                 <span className="block bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                  Dream Blog
+                  Blog Platform
                 </span>
               </h1>
               <p className="text-xl md:text-2xl text-gray-600 mb-12 max-w-4xl mx-auto leading-relaxed">
-                Build a stunning, personalized blog with your own custom URL. 
-                Share your stories, showcase your creativity, and connect with the world.
+                Create your own decentralized blog powered by Filecoin Onchain Cloud. 
+                Secure, censorship-resistant, and truly yours with decentralized storage and payments.
               </p>
             </motion.div>
             
@@ -212,7 +214,7 @@ export default function HomePage() {
               transition={{ duration: 0.6 }}
               className="text-4xl md:text-5xl font-bold text-gray-900 mb-6"
             >
-              What We Do
+              Filecoin-Powered Features
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -220,8 +222,8 @@ export default function HomePage() {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="text-xl text-gray-600 max-w-3xl mx-auto"
             >
-              We make it incredibly easy for anyone to create a beautiful, professional blog 
-              that stands out from the crowd.
+              Experience the future of decentralized blogging with Filecoin Onchain Cloud integration. 
+              Secure, fast, and truly decentralized.
             </motion.p>
           </div>
 
@@ -229,33 +231,33 @@ export default function HomePage() {
             {[
               {
                 icon: Globe,
-                title: 'Custom Blog URLs',
-                description: 'Get your own personalized domain like yourname.postify.com and make your blog uniquely yours.'
+                title: 'Decentralized Storage',
+                description: 'Your content is stored on Filecoin network using Warm Storage services, ensuring maximum security and global availability.'
               },
               {
                 icon: Zap,
-                title: 'Easy Content Creation',
-                description: 'Create stunning posts with our intuitive editor. Add images, videos, and rich formatting effortlessly.'
+                title: 'FilecoinPay Integration',
+                description: 'Accept payments in FIL tokens and other cryptocurrencies through our integrated FilecoinPay system.'
               },
               {
                 icon: Shield,
-                title: 'Secure & Reliable',
-                description: 'Your content is stored on decentralized Lighthouse storage, ensuring maximum security and availability.'
+                title: 'Censorship Resistant',
+                description: 'Your blog content is truly decentralized and cannot be taken down by any single entity or government.'
               },
               {
                 icon: Users,
-                title: 'Build Your Audience',
-                description: 'Connect with readers worldwide and grow your community with our built-in social features.'
+                title: 'FilCDN Content Delivery',
+                description: 'Lightning-fast content delivery worldwide through Filecoin CDN network for optimal performance.'
               },
               {
                 icon: Star,
-                title: 'Beautiful Themes',
-                description: 'Choose from professionally designed themes or customize your blog to match your unique style.'
+                title: 'Synapse SDK Integration',
+                description: 'Leverage Filecoin Synapse SDK for advanced blockchain interactions and smart contract features.'
               },
               {
                 icon: CheckCircle,
-                title: 'No Technical Skills Required',
-                description: 'Start blogging in minutes without any coding knowledge. We handle all the technical stuff.'
+                title: 'Web3 Native',
+                description: 'Built from the ground up for the decentralized web with full Filecoin ecosystem integration.'
               }
             ].map((feature, index) => (
               <motion.div
@@ -302,18 +304,18 @@ export default function HomePage() {
             {[
               {
                 step: "01",
-                title: "Choose Your URL",
-                description: "Pick your unique blog URL and create your account. Your blog will be live at yourname.postify.com"
+                title: "Connect to Filecoin",
+                description: "Create your account and connect to the Filecoin network. Your content will be stored on decentralized storage."
               },
               {
                 step: "02", 
                 title: "Customize Your Blog",
-                description: "Personalize your blog with themes, colors, and your profile. Make it truly yours."
+                description: "Personalize your blog with themes, colors, and your profile. All data stored on Filecoin Warm Storage."
               },
               {
                 step: "03",
-                title: "Start Creating",
-                description: "Write your first post, add images and videos, and share your story with the world."
+                title: "Publish & Monetize",
+                description: "Create content, accept FIL payments, and leverage Filecoin CDN for global content delivery."
               }
             ].map((step, index) => (
               <motion.div
@@ -344,7 +346,7 @@ export default function HomePage() {
             transition={{ duration: 0.6 }}
             className="text-4xl md:text-5xl font-bold text-white mb-6"
           >
-            Ready to Start Your Blog?
+            Ready to Go Decentralized?
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -352,7 +354,7 @@ export default function HomePage() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-xl text-blue-100 mb-12 max-w-2xl mx-auto"
           >
-            Join thousands of creators who are already sharing their stories and building their communities.
+            Join the future of decentralized blogging powered by Filecoin Onchain Cloud.
           </motion.p>
           {session ? (
             <motion.div
@@ -393,8 +395,8 @@ export default function HomePage() {
                 Postify
               </h3>
               <p className="text-gray-400 mb-6">
-                The easiest way to create and share your custom blog with the world. 
-                Start your journey today.
+                The first decentralized blog platform powered by Filecoin Onchain Cloud. 
+                Secure, censorship-resistant, and truly yours.
               </p>
               <div className="flex space-x-4">
                 <div className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors cursor-pointer">
@@ -414,30 +416,30 @@ export default function HomePage() {
                 <li><Link href="/features" className="hover:text-white transition-colors">Features</Link></li>
                 <li><Link href="/pricing" className="hover:text-white transition-colors">Pricing</Link></li>
                 <li><Link href="/dashboard" className="hover:text-white transition-colors">Dashboard</Link></li>
-                <li><Link href="#" className="hover:text-white transition-colors">API</Link></li>
+                <li><Link href="/api-docs" className="hover:text-white transition-colors">API</Link></li>
               </ul>
             </div>
             <div>
               <h4 className="font-semibold mb-6">Company</h4>
               <ul className="space-y-3 text-gray-400">
                 <li><Link href="/about" className="hover:text-white transition-colors">About Us</Link></li>
-                <li><Link href="#" className="hover:text-white transition-colors">Careers</Link></li>
-                <li><Link href="#" className="hover:text-white transition-colors">Blog</Link></li>
-                <li><Link href="#" className="hover:text-white transition-colors">Contact</Link></li>
+                <li><Link href="/careers" className="hover:text-white transition-colors">Careers</Link></li>
+                <li><Link href="/blog" className="hover:text-white transition-colors">Blog</Link></li>
+                <li><Link href="/contact" className="hover:text-white transition-colors">Contact</Link></li>
               </ul>
             </div>
             <div>
               <h4 className="font-semibold mb-6">Support</h4>
               <ul className="space-y-3 text-gray-400">
-                <li><Link href="#" className="hover:text-white transition-colors">Help Center</Link></li>
-                <li><Link href="#" className="hover:text-white transition-colors">Documentation</Link></li>
-                <li><Link href="#" className="hover:text-white transition-colors">Status</Link></li>
-                <li><Link href="#" className="hover:text-white transition-colors">Privacy Policy</Link></li>
+                <li><Link href="/help" className="hover:text-white transition-colors">Help Center</Link></li>
+                <li><Link href="/api-docs" className="hover:text-white transition-colors">Documentation</Link></li>
+                <li><Link href="/status" className="hover:text-white transition-colors">Status</Link></li>
+                <li><Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link></li>
               </ul>
             </div>
           </div>
           <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
-            <p>&copy; 2024 Postify. All rights reserved. Made with ❤️ for creators worldwide.</p>
+            <p>&copy; 2024 Postify. All rights reserved. Built on Filecoin Onchain Cloud for the decentralized web.</p>
           </div>
         </div>
       </footer>
