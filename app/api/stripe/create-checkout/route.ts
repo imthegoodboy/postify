@@ -5,7 +5,7 @@ import { createCheckoutSession } from '@/lib/stripe'
 import dbConnect from '@/lib/mongodb'
 import User from '@/models/User'
 
-export async function GET(request: NextRequest) {
+export async function POST(request: NextRequest) {
   try {
     const session = await getServerSession(authOptions)
     
@@ -13,8 +13,8 @@ export async function GET(request: NextRequest) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
     }
 
-    const { searchParams } = new URL(request.url)
-    const plan = searchParams.get('plan') as 'basic' | 'premium'
+    const body = await request.json()
+    const plan = body.plan as 'basic' | 'premium'
 
     if (!plan || !['basic', 'premium'].includes(plan)) {
       return NextResponse.json({ error: 'Invalid plan' }, { status: 400 })
@@ -29,7 +29,7 @@ export async function GET(request: NextRequest) {
 
     const checkoutSession = await createCheckoutSession(session.user.id, plan)
     
-    return NextResponse.redirect(checkoutSession.url!)
+    return NextResponse.json({ url: checkoutSession.url })
   } catch (error) {
     console.error('Checkout session creation error:', error)
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 })

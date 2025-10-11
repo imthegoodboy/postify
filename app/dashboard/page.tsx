@@ -406,12 +406,31 @@ export default function DashboardPage() {
       <PricingModal
         isOpen={showPricingModal}
         onClose={() => setShowPricingModal(false)}
-        onSelectPlan={(plan) => {
+        onSelectPlan={async (plan) => {
           if (plan === 'free') {
             toast.success('You\'re already on the free plan!')
           } else {
-            // Redirect to payment for paid plans
-            window.location.href = `/api/stripe/create-checkout?plan=${plan}`
+            try {
+              // Create checkout session
+              const response = await fetch('/api/stripe/create-checkout', {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ plan }),
+              })
+              
+              if (response.ok) {
+                const { url } = await response.json()
+                window.location.href = url
+              } else {
+                const error = await response.json()
+                toast.error(error.error || 'Payment failed')
+              }
+            } catch (error) {
+              console.error('Payment error:', error)
+              toast.error('Payment failed. Please try again.')
+            }
           }
         }}
       />

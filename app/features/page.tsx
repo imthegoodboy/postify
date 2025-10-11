@@ -50,6 +50,36 @@ export default function FeaturesPage() {
       benefits: ['Reader engagement', 'Social sharing', 'Comments system', 'Newsletter integration']
     },
     {
+      icon: Smartphone,
+      title: 'Post by Email',
+      description: 'Write drafts or posts directly from your email. Attach photos to create automatic photo galleries. We\'ll even remove your email signature automatically.',
+      benefits: ['Email posting', 'Photo galleries', 'Auto-signature removal', 'Mobile-friendly']
+    },
+    {
+      icon: Globe,
+      title: 'Automatic Link Expansion',
+      description: 'Paste a link (YouTube, Google Maps, Soundcloud) and we\'ll automatically embed it inside your post for rich content.',
+      benefits: ['YouTube embeds', 'Google Maps', 'Soundcloud', 'Rich media']
+    },
+    {
+      icon: Palette,
+      title: 'Custom Themes & Design',
+      description: 'Use one of our themes or build your own with HTML, CSS, and our CLI. Complete control over your blog\'s appearance.',
+      benefits: ['Custom HTML/CSS', 'CLI tools', 'Header images', 'Unsplash integration']
+    },
+    {
+      icon: BarChart3,
+      title: 'Analytics & Insights',
+      description: 'Track visits with Google Analytics and detailed insights. Monitor your blog\'s performance and growth.',
+      benefits: ['Google Analytics', 'Visitor tracking', 'Performance metrics', 'Growth insights']
+    },
+    {
+      icon: Lock,
+      title: 'Privacy & Security',
+      description: 'Password protection, private posts, and secure hosting. Keep your content safe and control who can see it.',
+      benefits: ['Password protection', 'Private posts', 'SSL hosting', 'Data security']
+    },
+    {
       icon: BarChart3,
       title: 'Analytics Dashboard',
       description: 'Track your blog performance with detailed analytics. See what resonates with your audience.',

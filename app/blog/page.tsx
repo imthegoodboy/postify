@@ -236,10 +236,13 @@ export default function BlogPage() {
                         {new Date(post.date).toLocaleDateString()}
                       </span>
                     </div>
-                    <button className="text-blue-600 hover:text-blue-800 font-medium flex items-center">
+                    <Link 
+                      href={`/blog/postify/posts/${post.id === '1' ? 'future-decentralized-content-creation' : 'getting-started-filecoin-storage'}`}
+                      className="text-blue-600 hover:text-blue-800 font-medium flex items-center"
+                    >
                       Read More
                       <ArrowRight className="h-4 w-4 ml-1" />
-                    </button>
+                    </Link>
                   </div>
                 </div>
               </motion.article>
@@ -287,15 +290,27 @@ export default function BlogPage() {
                   <p className="text-gray-600 text-sm mb-4">
                     {post.excerpt}
                   </p>
-                  <div className="flex items-center justify-between text-xs text-gray-500">
-                    <span className="flex items-center">
-                      <User className="h-3 w-3 mr-1" />
-                      {post.author}
-                    </span>
-                    <span className="flex items-center">
-                      <Calendar className="h-3 w-3 mr-1" />
-                      {new Date(post.date).toLocaleDateString()}
-                    </span>
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center space-x-4 text-xs text-gray-500">
+                      <span className="flex items-center">
+                        <User className="h-3 w-3 mr-1" />
+                        {post.author}
+                      </span>
+                      <span className="flex items-center">
+                        <Calendar className="h-3 w-3 mr-1" />
+                        {new Date(post.date).toLocaleDateString()}
+                      </span>
+                    </div>
+                    <Link 
+                      href={`/blog/postify/posts/${post.id === '3' ? 'censorship-resistant-platforms' : 
+                        post.id === '4' ? 'filecoin-network-update' : 
+                        post.id === '5' ? 'building-first-decentralized-blog' : 
+                        'community-spotlight-creator-stories'}`}
+                      className="text-blue-600 hover:text-blue-800 font-medium text-sm flex items-center"
+                    >
+                      Read More
+                      <ArrowRight className="h-3 w-3 ml-1" />
+                    </Link>
                   </div>
                 </div>
               </motion.article>
