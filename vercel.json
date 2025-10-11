@@ -44,11 +44,5 @@
         }
       ]
     }
-  ],
-  "rewrites": [
-    {
-      "source": "/:path((?!api|auth|_next|static|public|favicon.ico).*)",
-      "destination": "/blog/:path*"
-    }
   ]
 }

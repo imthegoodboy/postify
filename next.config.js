@@ -9,8 +9,10 @@ const nextConfig = {
       // Route ONLY clean root-level paths (usernames) to blog pages
       // Exclude framework/system and our app routes so API/auth does not 404
       {
-        source:
-          '/:username((?!api|_next|favicon\\.ico|assets|images|blog|auth|dashboard|pricing|features|about|contact|public).+)',
+        // Match only a single path segment for usernames (no slashes).
+        // Avoid complex negative-lookahead regexes here because they can
+        // cause micromatch/collect-build-traces to recurse and crash the build.
+        source: '/:username([^/]+)',
         destination: '/blog/:username',
       },
     ]
