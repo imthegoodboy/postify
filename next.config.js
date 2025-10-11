@@ -4,19 +4,9 @@ const nextConfig = {
     domains: ['gateway.lighthouse.storage', 'ipfs.io', 'localhost'],
     unoptimized: false,
   },
-  async rewrites() {
-    return [
-      // Route ONLY clean root-level paths (usernames) to blog pages
-      // Exclude framework/system and our app routes so API/auth does not 404
-      {
-        // Match only a single path segment for usernames (no slashes).
-        // Avoid complex negative-lookahead regexes here because they can
-        // cause micromatch/collect-build-traces to recurse and crash the build.
-        source: '/:username([^/]+)',
-        destination: '/blog/:username',
-      },
-    ]
-  },
+  // Note: username routing is handled in middleware.ts to avoid
+  // complex rewrite/glob patterns in next.config which can trigger
+  // micromatch recursion during Vercel build trace collection.
   // Production optimizations
   compress: true,
   poweredByHeader: false,

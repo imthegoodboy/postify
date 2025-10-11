@@ -4,7 +4,9 @@ import User from '@/models/User'
 
 export async function GET(request: NextRequest) {
   try {
-    const { searchParams } = new URL(request.url)
+  // Use request.nextUrl instead of constructing a new URL from request.url
+  // to avoid triggering Next's staticGenerationBailout (dynamic server usage)
+  const { searchParams } = request.nextUrl
     const username = searchParams.get('username')
 
     if (!username) {
